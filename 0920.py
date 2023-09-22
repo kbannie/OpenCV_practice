@@ -3,7 +3,7 @@ import cv2
 print("OpenCV version:")
 print(cv2.__version__)
 
-img=cv2.imread("kkk.png")
+img=cv2.imread("./photo/kkk.png")
 print("width: {} pixels".format(img.shape[1])) 
 print("height: {} pixels".format(img.shape[0]))
 print("channels: {} pixels".format(img.shape[2])) #RGB
