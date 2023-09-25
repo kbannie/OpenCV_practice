@@ -12,6 +12,8 @@ title_name = 'Haar cascade object detection Video'
 frame_width = 500
 cap = cv2.VideoCapture()
 
+
+
 face_cascade = cv2.CascadeClassifier()
 eyes_cascade = cv2.CascadeClassifier()
 #-- 1. Load the cascades
