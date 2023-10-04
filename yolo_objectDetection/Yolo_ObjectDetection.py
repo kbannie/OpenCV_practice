@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 
+min_confidence=0.5
+
 #Load Yolo
 net=cv2.dnn.readNet("./Data/yolo/yolov3.weights", "./Data/yolo/yolov3.cfg") #yolo3.weights:이미 학습된 모델
 classes=[]
@@ -32,9 +34,9 @@ boxes = []
 for out in outs:
     for detection in out:
         scores = detection[5:]
-        class_id = np.argmax(scores)
+        class_id = np.argmax(scores) #argmax :가장 큰거
         confidence = scores[class_id]
-        if confidence > 0.5:
+        if confidence > min_confidence:
             # Object detected
             center_x = int(detection[0] * width)
             center_y = int(detection[1] * height)
