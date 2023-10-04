@@ -7,10 +7,8 @@ min_confidence=0.5 #50% 이상 확률만 보여주기
 file_name = './Data/video/obama_01.mp4'
 
 def detectAndDisplay(frame):
-    # pass the blob through the model and obtain the detections 
     model = cv2.dnn.readNetFromCaffe(prototxt_name, model_name)
 
-    # Resizing to a fixed 300x300 pixels and then normalizing it
     blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300)), 1.0,
             (300, 300), (104.0, 177.0, 123.0))
 
