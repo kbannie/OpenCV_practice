@@ -23,9 +23,9 @@ def selectFile():
     detectAndDisplay()
     
 def detectAndDisplay():
+    #자체적으로 재귀함수처럼 돌아오기
     _, frame = cap.read()
-    (h, w) = frame.shape[:2]
-    # pass the blob through the model and obtain the detections 
+    (h, w) = frame.shape[:2] 
     model = cv2.dnn.readNetFromCaffe(prototxt_name, model_name)
 
     # Resizing to a fixed 300x300 pixels and then normalizing it
