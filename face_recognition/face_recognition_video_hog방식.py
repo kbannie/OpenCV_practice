@@ -3,11 +3,12 @@ import face_recognition
 import pickle
 import time
 
-
+#hog : 속도 good, but 정확도 낮음
+#cnn : 속도 not good, but 정확도 높음
 file_name="C:/OpenSK/Data/video/son_02.mp4"
 encoding_file="C:/OpenSK/encodings.pickle"
 unknown_name="Unknown"
-model_method="hog"
+model_method="hog" #빠르지만 정확도 떨어짐
 output_name = 'C:/OpenSK/Data/video/output_' + model_method + '.avi'
 
 def detectAndDisplay(image):
