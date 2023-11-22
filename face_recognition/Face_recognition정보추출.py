@@ -6,11 +6,11 @@ import cv2
 import face_recognition
 import pickle #정보를 serialize(일렬로 세우기)한 후 다른 형태로 deserealize해줌
 
-dataset_paths=['./Data/dataset/son/','./Data/dataset/tedy/']
-names=['Son','Tedy']
+dataset_paths=['./Data/dataset/jang/']
+names=['Jang']
 number_images=10
-image_type='.jpg'
-encoding_file='encodings.pickle'
+image_type='.png'
+encoding_file='encodings3.pickle'
 model_method='cnn' #?네? 대표적인 시각화 방법으로 정확하지만 느림/ hog는 빠르지만 정확도 낮음
 
 knownEncodings=[]
@@ -31,13 +31,13 @@ for (i, dataset_path) in enumerate(dataset_paths): #enumerate : 인덱스와 원
 
         #encoding
         encodings=face_recognition.face_encodings(rgb, boxes) #얼굴만 갖고옴
-        # 128개의 real number로 되어있으니 loop를 돌리기 
+        # 128개의 real number로 되어있으니 loop를 돌리기
         for encoding in encodings:
             print(file_name, name, encoding)
             knownEncodings.append(encoding) 
             knownNames.append(name)
 
-#save the facial encoding + 파일 저장하기
+#save the facial encoding + 파일로 저장하기
 data = {"encodings": knownEncodings, "names": knownNames}
 f = open(encoding_file, "wb") #파일 열기
 f.write(pickle.dumps(data)) #데이터 넣어주기

@@ -4,7 +4,7 @@ import pickle
 import time #시간 측정
 
 
-image_file="C:/OpenSK/Data/image/marathon_01.jpg"
+image_file="C:/OpenSK/Data/image/yu.png"
 encoding_file="C:/OpenSK/encodings.pickle"
 unknown_name="Unknown"
 model_method="cnn"
